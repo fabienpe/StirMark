@@ -1,0 +1,301 @@
+.TH stirmark 1 "98/07/08" "Stirmark, Version 2.0"
+.SH NAME
+stirmark \- a tool for robustness testing of image watermarking algorithms
+.SH SYNOPSIS
+.B stirmark
+[
+.B options
+]
+[
+.B input file
+]
+[
+.B output file
+]
+.SH DESCRIPTION
+.B StirMark 
+is a generic tool for simple robustness testing of image
+watermarking algorithms and other steganographic techniques. It can be
+applied to photographic digital images and it will distort the
+watermark of too simplistic marking techniques such that the embedded
+watermark or steganographic message cannot any more be detected and
+decoded from the result image.
+.PP
+.B StirMark 
+reads and writes arbitrary images in the PGM and PPM file
+formats as they are used in Jef Poskanzer's pbmplus Extended Portable
+Bitmap Toolkit. These are simple file formats, and the various PBM
+toolkits contain converters between these formats and practically any
+other commonly used graphics file format. This way, 
+.B StirMark 
+can be easily used to process any format on any platform.
+.PP
+.SH OPTIONS
+You can specify an input and an output file name in the command
+line. If you omit any of those, 
+.I stdin 
+and 
+.I stdout 
+are used instead respectively.
+.TP
+.BI \-i float
+The number of pixel distances that the corner of the target
+image is allowed to be inside the original image. If the
+number is followed by %, then the maximum corner shift
+is defined as a percentage of the image width or height,
+whichever is smaller. Default is 
+.BI \-i 2.0%.
+.TP  
+.BI \-o float   
+The number of pixel distances that the corner of the target
+image is allowed to be outside the original image  
+(default 0.7). Sample values taken from outside the
+original image are extrapolated. You can also specify a
+percentage as with 
+.B \-i, 
+but this is normally not useful
+as 
+.B \-o 
+values much higher than 1 cause mostly useless extrapolations.
+.TP
+.BI \-d float
+The maximum byte value by which any of the RGB values  
+of any pixel is allowed to deviate from the original
+value (default 1.5).
+.TP
+.BI \-n int
+Specify the maximum distance of a non-zero impulse response
+for the Nyquist lowpass interpolation filter (default 6). 
+Runtime depends quadratic on this parameter!
+.TP
+.BI \-s int
+Seed value for the random number generator. If you do  
+systematic measurements with 
+.B StirMark, 
+then repeat the
+runs with different 
+.B \-s 
+values (e.g. from 
+.BI \-s 1 
+to
+.BI \-s 100
+), to get significant results regarding the probability with
+which 
+.B StirMark 
+breaks your steganographic technique.
+.TP
+.BI \-R float
+The fraction of pixel displacement allowed for any pixel.
+During the distorsion process, any pixel can be move randomly 
+along both axes.
+.TP
+.BI \-b float
+The number of pixel displacement allowed for the center
+of the image. All the pixel are moved using a smooth  
+function. Pixels at the corners are not moved while the
+pixel in the center of the image is moved the most.
+This is similar to a `punch/pinch' effect.
+.TP
+.BI \-T name    
+The test implemented by default into 
+.B StirMark 
+include:
+.in 10
+.ti 9 
+\-
+rotation by a small angle and cropping: -2, -1, -0.5, 0.5, 1
+and 2 degrees. This simulates in part
+what is obtain when scanning in image: it is impossible
+to align it perfectly.
+.br
+.ti 9
+\-
+rotation by a small angle followed by cropping and
+rescaling to keep the original size of the image.
+.br
+.ti 9
+\-
+scaling by factors 0.5, 0.75, 0.9, 1.1, 1.5 and 2.
+.br
+.ti 9
+\-
+centered cropping: 1%, 2%, 5%, 10%, 15%, 20%, 25% and 50%
+.br
+.ti 9
+\- 
+median filtering
+.br
+.ti 9
+\- 
+gaussian filtering (blurring)
+.br
+.ti 9
+\- 
+horizontal flip
+.br
+.ti 9
+\- 
+original 
+.B StirMark 
+.br
+.ti 9
+\-
+.B StirMark 
+with randomisation using the default
+randomisation parameter
+.br
+.ti 9
+\- 
+.B StirMark
+with randomisation and bending effect using default parameters.
+.PP
+Normally you do not have to use any of those options (except 
+.B \-T
+) and
+you should try the default values first. If this doesn't remove the
+watermark, then the embedding algorithm is not too bad and you can try to
+increase the 
+.B \-i 
+value to get a stronger geometric transform. Then try
+higher 
+.B \-d 
+values to get a more significant color transform or 
+.B \-R 
+or 
+.B \-b 
+to increase the random distorsion. If you want no geometric transform at
+all, set 
+.BI \-i 0 
+and 
+.BI \-o 0
+.
+.PP
+For example 
+.P
+.ft R
+stirmark -Tbase test.ppm
+.ft P
+.P
+will create 32 files with base name `base' and different suffixes
+depending
+on the transformation applied.
+.P
+You can still use the `original` 
+.B StirMark:
+.P                          
+.ft R
+stirmark -i0 -o0 -d0 test.ppm output.ppm
+.ft P
+.P
+does not modify the image at all.
+.PP
+.B StirMark 
+basically simulates a resampling process, i.e. it introduces
+the same kind of errors into an image that you would expect if you
+printed an image on a high-quality printer and then scan the image
+again with a high-quality scanner. The algorithm applies a minor
+geometric distortion, i.e. the image is slightly stretched, sheared,
+shifted, and/or rotated by an unnoticeable random amount and then
+resampled using Nyquist interpolation. In addition, a transfer function
+that introduces a small and smoothly distributed error into all sample
+values is applied, which acts like a small non-linear analog/digital
+converter imperfection typically found in scanners and display devices.
+.PP
+Finally we added a randomisation process by which each pixel is   
+slightly shift along th x and y axis. This is also emphasized by a
+punch/pinch effect. The difference on drawings with straight lines
+is usually obvious however it almost unoticeable with photos. This  
+increase the size of the space that a watermark detector should  
+search.
+.PP
+.B StirMark 
+introduces a practically unnoticeable quality loss in the  
+image if it is applied only once. However after a few iterated
+applications of the algorithm, the image degradation becomes soon very
+noticeable. This makes StirMark (especially the 
+.B \-d 
+option) also a 
+model for algorithms that can be applied to artificially degrade  
+images on replay to get rid of the lossless-copying property of   
+digital multimedia objects.
+.PP
+.B StirMark 
+is a generic steganographic attack tool in that it is not
+targeted against any specific steganographic algorithm. I hope to
+establish with
+.B StirMark 
+a reasonable minimum robustness requirement 
+for steganographic image processing tools, i.e. if information
+embedded by an algorithm into an image does not survive the 
+.B StirMark  
+process, then the steganographic technique used should considered to
+be unacceptably easy to break.
+.PP
+Version 2.0 adds the following command line option to version 1.0
+.TP
+.BI \-T name 
+to perform a standard series of tests on a single image.
+.TP
+.BI \-R float
+and 
+.BI \-b float
+are used in the enhanced distortion process.
+.PP
+.SH AUTHOR
+Suggestions for improving this software are always welcome. We are   
+also interested in robustness test results obtained by processing with
+.B StirMark 
+images that were marked with various available watermarking tools.
+.PP
+Markus G. Kuhn and Fabien A. P. Petitcolas
+.PP
+Markus G. Kuhn and Fabien A. P. Petitcolas are with the Computer
+Laboratory, University of Cambridge, New Museum Site, CB2 3QG, UK.
+.P
+M. G. Kuhn               http://www.cl.cam.ac.uk/~mgk25/
+.P
+F. A. P. Petitcolas      http://www.cl.cam.ac.uk/~fapp2/   
+.P
+.SH NOTES
+Surprisingly, first experiences with various watermarking tools show
+that the watermarks of
+.B all
+tools we have been able to locate until today (DigiMark, JK_PGS, SysCop,
+SureSign, etc.) can be removed or made undetectable by 
+.B StirMark,
+especially if 
+.B StirMark 
+is followed by a medium quality JPEG compression. For more
+information, please see:
+.P
+     http://www.cl.cam.ac.uk/~fapp2/steganography/
+.P
+A paper describing among other things our experiences with 
+.B StirMark 
+in more detail is available from:
+.P   
+     http://www.cl.cam.ac.uk/~fapp2/papers/ih98-attacks/
+.P
+This man-page has been created by Peter Meerwald, pmeerw@cosy.sbg.ac.at
+from the README, Version 1.2, 1998/07/07 by F. A. P. Petitcolas.
+.SH AVAILABILITY
+.B StirMark 
+is freely available under the GNU General Public Licence in
+full portable ISO C source code from
+.P
+     http://www.cl.cam.ac.uk/~fapp2/watermarking/stirmark/
+.P
+The original 
+.B StirMark 
+(version 1.0) is still available from   
+.P
+     http://www.cl.cam.ac.uk/~mgk25/stirmark/
+.P
+PBM tools are for instance available from
+.P
+     ftp://ftp.wustl.edu/graphics/graphics/packages/pbmplus/pbmplus10dec91.tar.Z
+     ftp://gatekeeper.dec.com/.b/X11-contrib/pbmplus10dec91.tar.Z
+     ftp://oak.oakland.edu/pub/msdos/graphics/pbmp191d.zip
+.P
+but you'll need these tools only if you do not already have other
+image processing software that can handle the PPM or PGM file formats.

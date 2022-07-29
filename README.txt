@@ -420,7 +420,8 @@ chapter III of European Parliament and Council Directive 96/9/EC".
 Acknowledgments
 ---------------
 
-- Peter Meerwald <pmeerw@cosy.sbg.ac.at> for the `man' page.
+- Peter Meerwald <pmeerw@cosy.sbg.ac.at> for the `man' page and for
+  pointing out problems with Median filtering and user interface.
 - Martin Kutter <Martin.Kutter@lts.epfl.ch>, École Polytechnique
   Fédérale de Lausanne, Switzerland, for providing some sample images
   for version 2.2.
@@ -452,4 +453,4 @@ University of Cambridge, New Museum Site, CB2 3QG, UK.
 <http://www.cl.cam.ac.uk/~fapp2/>
 
 
-$Header: /StirMark/README.txt 21    7/04/99 12:21 Fapp2 $
+$Header: /StirMark/README.txt 22    11/08/99 19:05 Fapp2 $

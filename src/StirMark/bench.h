@@ -25,14 +25,19 @@
  *
  * and 
  *
- *   Fabien A. P. Petitcolas and Ross J. Anderson, Evaluation of 
- *   copyright marking systems. To be presented at IEEE Multimedia
- *   Systems (ICMCS'99), 7--11 June 1999, Florence, Italy. 
+ *   Martin Kutter and Fabien A. P. Petitcolas. A fair benchmark for
+ *   image watermarking systems, To in E. Delp et al. (Eds), in
+ *   vol. 3657, proceedings of Electronic Imaging '99, Security and
+ *   Watermarking of Multimedia Contents, San Jose, CA, USA, 25--27
+ *   January 1999. The International Society for Optical
+ *   Engineering. To appear.
+ *
+ *   <http://www.cl.cam.ac.uk/~fapp2/papers/ei99-benchmark/>
  *
  * See the also the "Copyright" file provided in this package for
  * copyright information about code and libraries used in StirMark.
  *
- * $Header: /StirMark/bench.h 2     7/04/99 11:28 Fapp2 $
+ * $Header: /StirMark/bench.h 3     11/08/99 19:01 Fapp2 $
  *----------------------------------------------------------------------------
  */
 
@@ -119,7 +124,7 @@
                                     { 0, -1,  0}}}}
 
 /* List of sizes for median filters */
-#define MEDIAN_FILTER_SIZES    {{2, 2}, {3, 3}, {4, 4}}
+#define MEDIAN_FILTER_SIZES    {{3, 3}, {5, 5}, {7, 7}, {9, 9}}
 
 /* List of parameters for general linear transformation.  */
 /* These transformation are expressed with a 2x2 matrix   */

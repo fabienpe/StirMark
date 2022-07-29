@@ -1,0 +1,63 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: StirMark - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\TEMP\RSPD5.tmp" with contents
+[
+/nologo /MLd /W4 /Gm /GX /ZI /Od /D "_DEBUG" /D "WIN32" /D "_CONSOLE" /D "_MBCS" /D "__STDC__" /FR"Debug/" /Fp"Debug/StirMark.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /c 
+"E:\fapp2\Development\StirMark\bench.c"
+"E:\fapp2\Development\StirMark\reconstructers.c"
+"E:\fapp2\Development\StirMark\stirmark.c"
+]
+Creating command line "cl.exe @C:\TEMP\RSPD5.tmp" 
+Creating temporary file "C:\TEMP\RSPD6.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/StirMark.pdb" /debug /machine:I386 /out:"Debug/StirMark.exe" /pdbtype:sept 
+.\Debug\bench.obj
+.\Debug\error.obj
+.\Debug\image.obj
+.\Debug\lrattack.obj
+.\Debug\quality.obj
+.\Debug\quantise.obj
+.\Debug\reconstructers.obj
+.\Debug\resamplers.obj
+.\Debug\stirmark.obj
+.\Debug\transformations.obj
+.\Debug\Version.res
+\fapp2\Development\JPEGLib\Debug\JPEGLib.lib
+]
+Creating command line "link.exe @C:\TEMP\RSPD6.tmp"
+<h3>Output Window</h3>
+Compiling...
+bench.c
+reconstructers.c
+stirmark.c
+Linking...
+Creating temporary file "C:\TEMP\RSPD7.tmp" with contents
+[
+/nologo /o"Debug/StirMark.bsc" 
+.\Debug\bench.sbr
+.\Debug\error.sbr
+.\Debug\image.sbr
+.\Debug\lrattack.sbr
+.\Debug\quality.sbr
+.\Debug\quantise.sbr
+.\Debug\reconstructers.sbr
+.\Debug\resamplers.sbr
+.\Debug\stirmark.sbr
+.\Debug\transformations.sbr]
+Creating command line "bscmake.exe @C:\TEMP\RSPD7.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+StirMark.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

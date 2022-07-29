@@ -31,9 +31,14 @@
  *
  * and 
  *
- *   Fabien A. P. Petitcolas and Ross J. Anderson, Evaluation of 
- *   copyright marking systems. To be presented at IEEE Multimedia
- *   Systems (ICMCS'99), 7--11 June 1999, Florence, Italy. 
+ *   Martin Kutter and Fabien A. P. Petitcolas. A fair benchmark for
+ *   image watermarking systems, To in E. Delp et al. (Eds), in
+ *   vol. 3657, proceedings of Electronic Imaging '99, Security and
+ *   Watermarking of Multimedia Contents, San Jose, CA, USA, 25--27
+ *   January 1999. The International Society for Optical
+ *   Engineering. To appear.
+ *
+ *   <http://www.cl.cam.ac.uk/~fapp2/papers/ei99-benchmark/>
  *
  * See the also the "Copyright" file provided in this package for
  * copyright information about code and libraries used in StirMark.

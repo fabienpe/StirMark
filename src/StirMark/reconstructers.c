@@ -53,14 +53,19 @@
  *
  * and 
  *
- *   Fabien A. P. Petitcolas and Ross J. Anderson, Evaluation of 
- *   copyright marking systems. To be presented at IEEE Multimedia
- *   Systems (ICMCS'99), 7--11 June 1999, Florence, Italy. 
+ *   Martin Kutter and Fabien A. P. Petitcolas. A fair benchmark for
+ *   image watermarking systems, To in E. Delp et al. (Eds), in
+ *   vol. 3657, proceedings of Electronic Imaging '99, Security and
+ *   Watermarking of Multimedia Contents, San Jose, CA, USA, 25--27
+ *   January 1999. The International Society for Optical
+ *   Engineering. To appear.
+ *
+ *   <http://www.cl.cam.ac.uk/~fapp2/papers/ei99-benchmark/>
  *
  * See the also the "Copyright" file provided in this package for
  * copyright information about code and libraries used in StirMark.
  *
- * $Header: /StirMark/reconstructers.c 10    7/04/99 11:26 Fapp2 $
+ * $Header: /StirMark/reconstructers.c 11    12/08/99 19:40 Fapp2 $
  *----------------------------------------------------------------------------
  */
 
@@ -605,12 +610,15 @@ BOOL recMedianFilterSetup(PROCESS_INFO *info)
 
 double recMedianFilter(double x, double y, int k, PROCESS_INFO *info)
 {
-    IVECTOR d, N, *pFilterSize;
+    IVECTOR d, N, M, *pFilterSize;
     int     i, j, isave; /* Temporary variables */
     double  tmp;         /* for bubble sort     */
+    int     npixels;     /* Number of pixels to take into */
+                         /* account (border effects)      */
 
     assert((info != NULL) && (info->param != NULL));
     pFilterSize = (IVECTOR *)(info->param);
+    npixels = 0;
 
     /* This could be improved by merging the table */
     /* filling and the sort                        */
@@ -621,16 +629,21 @@ double recMedianFilter(double x, double y, int k, PROCESS_INFO *info)
             N.x = (int)x + d.x - offset.x;
             N.y = (int)y + d.y - offset.y;
             
-            table[d.y * pFilterSize->x + d.x] = _GetPixelValue(N.x, N.y, k, 
-                                                               info);
+            M.x = N.x + info->offset.x;
+            M.y = N.y + info->offset.y;
+
+            /* Check that the pixel is inside the picutre */
+            if (M.x >= 0 && M.x < info->sI.size.x &&
+                M.y >= 0 && M.y < info->sI.size.y)
+                table[npixels++] = _GetPixelValue(N.x, N.y, k, info);
         }
     }
                 
     /* Bubble sort the temporary table */
-    for(i = 0; i < pFilterSize->x * pFilterSize->y - 1; i++)
+    for(i = 0; i < npixels - 1; i++)
     {
         isave = i;
-        for(j = i + 1; j < pFilterSize->x * pFilterSize->y; j++)
+        for(j = i + 1; j < npixels; j++)
         {
             if(table[i] > table[j])
                 isave = j;
@@ -643,7 +656,7 @@ double recMedianFilter(double x, double y, int k, PROCESS_INFO *info)
         }
     }
     
-    return (table[iMedian]);
+    return (table[npixels / 2]);
 }
 
 BOOL recMedianFilterCleanup(PROCESS_INFO *info)

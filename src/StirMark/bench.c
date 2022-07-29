@@ -29,14 +29,19 @@
  *
  * and 
  *
- *   Fabien A. P. Petitcolas and Ross J. Anderson, Evaluation of 
- *   copyright marking systems. To be presented at IEEE Multimedia
- *   Systems (ICMCS'99), 7--11 June 1999, Florence, Italy. 
+ *   Martin Kutter and Fabien A. P. Petitcolas. A fair benchmark for
+ *   image watermarking systems, To in E. Delp et al. (Eds), in
+ *   vol. 3657, proceedings of Electronic Imaging '99, Security and
+ *   Watermarking of Multimedia Contents, San Jose, CA, USA, 25--27
+ *   January 1999. The International Society for Optical
+ *   Engineering. To appear.
+ *
+ *   <http://www.cl.cam.ac.uk/~fapp2/papers/ei99-benchmark/>
  *
  * See the also the "Copyright" file provided in this package for
  * copyright information about code and libraries used in StirMark.
  *
- * $Header: /StirMark/bench.c 23    7/04/99 11:24 Fapp2 $
+ * $Header: /StirMark/bench.c 24    12/08/99 19:40 Fapp2 $
  *----------------------------------------------------------------------------
  */
 #include <stdlib.h>
@@ -255,8 +260,9 @@ static int test(IMAGE I, char *strzBasename, NYQUIST n, int nTest)
     info.nTra = pTestsInfo[nTest].nTra;
     info.nSam = pTestsInfo[nTest].nSam;
     
-    /* Mirror borders on ly for geometric distortions */
+    /* Mirror borders only for geometric distortions */
     info.mirrorBorders = (pTestsInfo[nTest].nTest == TEST_GEOM_DISTORTIONS);
+    /* May also be used in this case: TEST_MEDIAN_FILTERING */
 
     /* For each value of the parameter */
     for (i = 0; i < pTestsInfo[nTest].nParam; i++)
@@ -425,13 +431,9 @@ void Benchmark(IMAGE I, NYQUIST n, char *strzBasename, int nTestSet)
 			ImageSavePPM(dI, strcat(strncpy(strzFileName, strzBasename,
 				MAX_BASENAME_LENGTH), "_reduce_colour"));
 			if ((psnr = PSNR(dI, I)) <= MIN_QUALITY)
-			{
 				printf(" - PSNR not meaningful\n");
-			}
 			else
-			{
 				printf(" - PSNR = %f\n", psnr);
-			}
 			ImageClear(&dI);
 		}
 		else
@@ -446,6 +448,8 @@ void Benchmark(IMAGE I, NYQUIST n, char *strzBasename, int nTestSet)
 void StirMark(IMAGE I, OPTIONS o, NYQUIST n, FILE *stream, int use_jpeg)
 {
     PROCESS_INFO info;
+    /*char         pszTempName[L_tmpnam + 4];
+    IMAGE        iTemp;*/
     
     if (I.img == NULL || stream == NULL) exit(1);
 
@@ -458,14 +462,18 @@ void StirMark(IMAGE I, OPTIONS o, NYQUIST n, FILE *stream, int use_jpeg)
     info.mirrorBorders = 1;
 
     ApplyTransformation(&info);
-	if (use_jpeg)
-	{
-		ImageWriteJPEG(info.dI, stream, o.jpeg_quality);
-	}
-	else
-	{
-		ImageWritePPM(info.dI, stream);
-	}
-
+    if (use_jpeg)
+        ImageWriteJPEG(info.dI, stream, o.jpeg_quality);
+    else
+    {
+        /* Dirty. Just apply JPEG compression and save as PPM
+        tmpnam(pszTempName);
+        ImageSaveJPEG(info.dI, pszTempName + 1, o.jpeg_quality);
+        ImageRead(&iTemp, strcat(pszTempName, "jpg") + 1);
+        remove(pszTempName + 1);
+        ImageWritePPM(iTemp, stream);*/
+        ImageWritePPM(info.dI, stream);
+    }
+    /* ImageClear(&(iTemp)); */
     ImageClear(&(info.dI));
 }

@@ -53,7 +53,7 @@
  *             jpg or jpeg).
  *
  *          Version 3.1, 1999-04-07 by Fabien A. P. Petitcolas
- *             Minor improvement: -NOJPEG prevents JPEG compression
+ *             Minor improvement: -NOJPEG prevent JPEG compression
  *             after geometrical distortions.
  *             Possibility to select a category of tests only.
  *             New tests: general linear geometric distortions, change
@@ -62,6 +62,10 @@
  *             new default values for some existing tests.
  *             Option to save and reuse parameters of geometrical 
  *             distortions.
+ *
+ *          Version 3.2,
+ *             Corrected sizes of Median filters
+ *             /? /h -? -h
  *
  * StirMark applies a number of minor almost invisible distortions to
  * an image in order to test whether some watermark detector can still
@@ -96,14 +100,19 @@
  *
  * and 
  *
- *   Fabien A. P. Petitcolas and Ross J. Anderson, Evaluation of 
- *   copyright marking systems. To be presented at IEEE Multimedia
- *   Systems (ICMCS'99), 7--11 June 1999, Florence, Italy. 
+ *   Martin Kutter and Fabien A. P. Petitcolas. A fair benchmark for
+ *   image watermarking systems, To in E. Delp et al. (Eds), in
+ *   vol. 3657, proceedings of Electronic Imaging '99, Security and
+ *   Watermarking of Multimedia Contents, San Jose, CA, USA, 25--27
+ *   January 1999. The International Society for Optical
+ *   Engineering. To appear.
+ *
+ *   <http://www.cl.cam.ac.uk/~fapp2/papers/ei99-benchmark/>
  *
  * See the also the "Copyright" file provided in this package for
  * copyright information about code and libraries used in StirMark.
  *
- * $Header: /StirMark/stirmark.c 20    7/04/99 11:48 Fapp2 $
+ * $Header: /StirMark/stirmark.c 22    11/08/99 19:28 Fapp2 $
  *----------------------------------------------------------------------------
  */
 
@@ -156,6 +165,7 @@ void Usage(char *name)
 {
     char usage[] =
         "StirMark %s\nUsage: %s [options] [<input file> [<output file>]]\n"
+        "\t-h, -?, /h, /?\tfor this help message\n\n"
         "\t-b<float>\tbending factor (%.2f)\n"
         "\t-d<float>\tmaximum variation of a pixel value (%.2f)\n"
         "\t-i<float>\tmaximum distance a corner can move inwards (%.2f%%)\n"
@@ -169,7 +179,7 @@ void Usage(char *name)
         "\t-PL+<filename>\tload all distortion parameters from file\n"
         "\t\t\tSame format as input\n"
         "\t-q<int>\t\tJPEG quality factor of output(%d)\n"
-		"\t-NOJPEG\t\tno JPEG compression after geometric distortions (no effect with -T option)\n"
+        "\t-NOJPEG\t\tno JPEG compression after geometric distortions\n"
         "\t-R<float>\trandomisation factor (%.2f)\n"
         "\t-s<int>\t\trandom number generator seed\n"
         "\t-t<float>\trelative modification of Nyquist filter threshold (%.2f)\n"
@@ -246,7 +256,7 @@ int main(int argc, char **argv)
     for (i = 1; i < argc; i++)
     {
         if ((argv[i][0] == '/' || argv[i][0] == '-') && 
-             argv[i][1] == '?' && 
+            (argv[i][1] == '?' || argv[i][1] == 'h') &&
              argv[i][2] == 0)
 
             Usage(argv[0]);
@@ -474,7 +484,7 @@ int main(int argc, char **argv)
                 /* Nothing is done if stregths are 0 */
                 LRAttack(&I, &I, do_lr[i], do_jndlr[i], (1 << i));
 
-            /* Then the StirMark geometrical distortions */
+            /* Then the StZirMark geometrical distortions */
             StirMark(I, o, n, fout, use_jpeg);
         }
     }
