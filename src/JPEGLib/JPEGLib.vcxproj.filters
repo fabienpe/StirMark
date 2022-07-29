@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{fb19687c-295c-40df-bc6b-4df616cd6cf7}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;hpj;bat;for;f90</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{537bcbaa-e618-4e78-b007-b52ce8cc83f6}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;fi;fd</Extensions>
+    </Filter>
+    <Filter Include="Other files">
+      <UniqueIdentifier>{d9326053-c87f-41bb-9259-c71447218607}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{75cc4d9a-a64d-42bf-bf3f-728bcb2d7158}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ansi2knr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cdjpeg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cjpeg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ckconfig.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="djpeg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="example.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jcapimin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jcapistd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jccoefct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jccolor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jcdctmgr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jchuff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jcinit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jcmainct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jcmarker.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jcmaster.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jcomapi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jcparam.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jcphuff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jcprepct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jcsample.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jctrans.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdapimin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdapistd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdatadst.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdatasrc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdcoefct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdcolor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jddctmgr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdhuff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdinput.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdmainct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdmarker.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdmaster.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdmerge.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdphuff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdpostct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdsample.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdtrans.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jerror.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jfdctflt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jfdctfst.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jfdctint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jidctflt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jidctfst.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jidctint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jidctred.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jmemansi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jmemdos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jmemmac.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jmemmgr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jmemname.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jmemnobs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jpegtran.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jquant1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jquant2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jutils.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rdbmp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rdcolmap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rdgif.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rdjpgcom.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rdppm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rdrle.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rdswitch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rdtarga.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="transupp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wrbmp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wrgif.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wrjpgcom.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wrppm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wrrle.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wrtarga.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="jchuff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jconfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jdct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jdhuff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jerror.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jinclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jmemsys.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jmorecfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jpegint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeglib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jversion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="change.log">
+      <Filter>Other files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="testimg.bmp">
+      <Filter>Other files</Filter>
+    </Image>
+    <Image Include="testimg.jpg">
+      <Filter>Other files</Filter>
+    </Image>
+    <Image Include="testimgp.jpg">
+      <Filter>Other files</Filter>
+    </Image>
+    <Image Include="testorig.jpg">
+      <Filter>Other files</Filter>
+    </Image>
+    <Image Include="testprog.jpg">
+      <Filter>Other files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="ansi2knr.1">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="cjpeg.1">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="coderules.doc">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="config.guess">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="config.sub">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="configure">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="djpeg.1">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="filelist.doc">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="install-sh">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="install.doc">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="jconfig.bcc">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="jconfig.cfg">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="jconfig.dj">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="jconfig.doc">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="jconfig.mac">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="jconfig.manx">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="jconfig.mc6">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="jconfig.sas">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="jconfig.st">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="jconfig.vc">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="jconfig.vms">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="jconfig.wat">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="jmemdosa.asm">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="jpegtran.1">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ltconfig">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ltmain.sh">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makcjpeg.st">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makdjpeg.st">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makeapps.ds">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makefile.ansi">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makefile.bcc">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makefile.cfg">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makefile.dj">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makefile.manx">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makefile.mc6">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makefile.mms">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makefile.sas">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makefile.unix">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makefile.vc">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makefile.vms">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makefile.wat">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makelib.ds">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makeproj.mac">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makljpeg.st">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="maktjpeg.st">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="makvms.opt">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="rdjpgcom.1">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="README">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="structure.doc">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="testimg.ppm">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="usage.doc">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="wizard.doc">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="wrjpgcom.1">
+      <Filter>Other files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Makefile" />
+  </ItemGroup>
+</Project>

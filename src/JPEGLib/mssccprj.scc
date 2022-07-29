@@ -1,0 +1,4 @@
+SCC = This is a Source Code Control file
+
+[Makefile.mak]
+SCC_Project_Name = "$/JPEGLib", OFAAAAAA

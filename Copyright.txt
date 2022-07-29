@@ -1,0 +1,186 @@
+
+------------
+StirMark 3.1
+------------
+
+Fabien A. P. Petitcolas and Markus G. Kuhn
+University of Cambridge, Computer Laboratory
+
+Each source file contains its own copyright information. The general
+agreement is as follows:
+
+
+Copyright (c) 1997, 1999 by Fabien A. P. Petitcolas and Markus G. Kuhn
+                            University of Cambridge, Computer Laboratory
+
+Permission to use, copy, modify, and distribute this software and its
+documentation for any non-commercial purpose and without fee is hereby
+granted (GPL), provided that the above copyright notice appear in all
+copies and that both that copyright notice and this permission notice
+appear in supporting documentation. This software is provided "as is"
+without express or implied warranty. The authors shall not be held
+liable in any event for incidental or consequential damages in
+connection with, or arising out of, the furnishing, performance, or
+use of this program.
+
+If you use StirMark for your research, please cite:
+
+    Fabien A. P. Petitcolas, Ross J. Anderson, Markus G. Kuhn. Attacks
+    on copyright marking systems, in David Aucsmith (Ed), Information
+    Hiding, Second International Workshop, IH'98, Portland, Oregon,
+    USA, April 15--17, 1998, Proceedings, LNCS 1525, Springer-Verlag,
+    ISBN 3-540-65386-4, pp. 219--239.
+
+    <http://www.cl.cam.ac.uk/~fapp2/papers/ih98-attacks/>
+
+and 
+
+    Fabien A. P. Petitcolas and Ross J. Anderson, Evaluation of 
+    copyright marking systems. To be presented at IEEE Multimedia
+    Systems (ICMCS'99), 7--11 June 1999, Florence, Italy. 
+
+We are required to state that "The Graphics Interchange Format(c) is
+the Copyright property of CompuServe Incorporated. GIF(sm) is a
+Service Mark property of CompuServe Incorporated."
+
+---
+
+Part of this software uses code by Neil Dodgson for another project.
+Neil allowed us to use his code under GPL.
+
+---
+
+The GPL can be found at:
+
+   <http://www.gnu.org/copyleft/gpl.html>
+
+---
+
+In addition, the full StirMark uses freely redistribuable code but
+which have the following copyright policies:
+
+
+
+------------
+JPEG Library
+------------
+
+The authors make NO WARRANTY or representation, either express or
+implied, with respect to this software, its quality, accuracy,
+merchantability, or fitness for a particular purpose.  This software
+is provided "AS IS", and you, its user, assume the entire risk as to
+its quality and accuracy.
+
+This software is copyright (c) 1991-1998, Thomas G. Lane.  All Rights
+Reserved except as specified below.
+
+Permission is hereby granted to use, copy, modify, and distribute this
+software (or portions thereof) for any purpose, without fee, subject
+to these conditions:
+
+(1) If any part of the source code for this software is distributed,
+then this README file must be included, with this copyright and
+no-warranty notice unaltered; and any additions, deletions, or changes
+to the original files must be clearly indicated in accompanying
+documentation.
+
+(2) If only executable code is distributed, then the accompanying
+documentation must state that "this software is based in part on the
+work of the Independent JPEG Group".
+
+(3) Permission for use of this software is granted only if the user
+accepts full responsibility for any undesirable consequences; the
+authors accept NO LIABILITY for damages of any kind.
+
+These conditions apply to any software derived from or based on the
+IJG code, not just to the unmodified library.  If you use our work,
+you ought to acknowledge us.
+
+Permission is NOT granted for the use of any IJG author's name or
+company name in advertising or publicity relating to this software or
+products derived from it.  This software may be referred to only as
+"the Independent JPEG Group's software".
+
+We specifically permit and encourage the use of this software as the
+basis of commercial products, provided that all warranty or liability
+claims are assumed by the product vendor.
+
+ansi2knr.c is included in this distribution by permission of L. Peter
+Deutsch, sole proprietor of its copyright holder, Aladdin Enterprises
+of Menlo Park, CA.  ansi2knr.c is NOT covered by the above copyright
+and conditions, but instead by the usual distribution terms of the
+Free Software Foundation; principally, that you must include source
+code if you redistribute it.  (See the file ansi2knr.c for full
+details.)  However, since ansi2knr.c is not needed as part of any
+program generated from the IJG code, this does not limit you more than
+the foregoing paragraphs do.
+
+The Unix configuration script "configure" was produced with GNU
+Autoconf. It is copyright by the Free Software Foundation but is
+freely distributable. The same holds for its supporting scripts
+(config.guess, config.sub, ltconfig, ltmain.sh).  Another support
+script, install-sh, is copyright by M.I.T. but is also freely
+distributable.
+
+It appears that the arithmetic coding option of the JPEG spec is
+covered by patents owned by IBM, AT&T, and Mitsubishi.  Hence
+arithmetic coding cannot legally be used without obtaining one or more
+licenses.  For this reason, support for arithmetic coding has been
+removed from the free JPEG software.  (Since arithmetic coding
+provides only a marginal gain over the unpatented Huffman mode, it is
+unlikely that very many implementations will support it.)  So far as
+we are aware, there are no patent restrictions on the remaining code.
+
+The IJG distribution formerly included code to read and write GIF
+files. To avoid entanglement with the Unisys LZW patent, GIF reading
+support has been removed altogether, and the GIF writer has been
+simplified to produce "uncompressed GIFs".  This technique does not
+use the LZW algorithm; the resulting GIF files are larger than usual,
+but are readable by all standard GIF decoders.
+
+We are required to state that "The Graphics Interchange Format(c) is
+the Copyright property of CompuServe Incorporated. GIF(sm) is a
+Service Mark property of CompuServe Incorporated."
+
+
+
+---------------------------
+Laplacian Removal Operation
+---------------------------
+
+Copyright (c) 1998, 1999 by Richard Barnett, University of Essex
+
+The Laplacian Removal Operation, which has been released under GPL by
+its author, uses code from SIUE, which has the following Copyright
+statement:
+
+Copyright (c) 1996, 1997 SIUE - by Scott E Umbaugh.
+
+Permission to use, copy, modify, and distribute this software and its
+documentation for any non-commercial purpose and without fee is hereby
+granted, provided that the above copyright notice appear in all copies
+and that both that copyright notice and this permission notice appear
+in supporting documentation.  This software is provided "as is"
+without express or implied warranty. The developers and SIUE shall not
+be held liable in any event for incidental or consequential damages in
+connection with, or arising out of, the furnishing, performance, or
+use of this program.
+
+
+---------------------
+Quantisation function
+---------------------
+
+The quantisation code is from the PBM Plus library:
+
+Copyright (c) 1989, 1991 by Jef Poskanzer.
+
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose and without fee is hereby granted,
+provided that the above copyright notice appear in all copies and that
+both that copyright notice and this permission notice appear in
+supporting documentation.  This software is provided "as is" without
+express or implied warranty.
+
+
+$Header: /StirMark/Copyright.txt 4     7/04/99 11:49 Fapp2 $

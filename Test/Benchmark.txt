@@ -1,0 +1,78 @@
+
+------------------
+StirMark Benchmark
+------------------
+
+If you wish to reproduce the results presented on:
+
+   <http://www.cl.cam.ac.uk/~fapp2/watermarking/benchmark/>
+
+use the following procedure:
+
+- Original images: lena, bear, skyline arch, watch, baboon and fishing
+  boat. These can be downloaded from:
+
+   <http://www.cl.cam.ac.uk/~fapp2/watermarking/benchmark/
+   image_database.html>
+
+- Watermark these the images with your software. This can be done by
+  modifying the Watermark.bat batch file in this directory. Until
+  their PSNR is greater than 38dB. To measure the PSNR, you can modify
+  the PSNR.bat batch provided in this directory.
+
+  PSNR is obviously not the best quality metric because it does not
+  take into account the properties of the human vision system. Future
+  version of StirMark shall include better metrics. [Any suggestion?]
+
+  If your system permits it, embed on of the following random strings:
+  ``gr42nRw:'' if your systems use error correction codes;
+  ``gr42nRw:t'' if it does not.
+
+- Attack each watermarked image `attack' with the predefined set of
+  transformations implemented into StirMark:
+  stirmark -Timage my_image.ppm
+  For this purpose you can modify the Attack.bat batch included in
+  this package.
+
+- Try to extract the watermark (modify the Detect.bat batch). If your
+  system only says that there is or not a watermark simply count all
+  the ``there is a watermark'' answers as 1 and all the others as
+  0. If you embedded the random string proposed earlier and your system
+  does not include correction code count 1 if 64 of the bits are
+  recovered correctly and 0 otherwise. If your system does include
+  error correction code count 1 whenever all the bits are recovered.
+
+
+The batch files in this directory are mainly intended for Windows NT
+users. They assume the following location of files:
+
+/ --+- stirmark.exe
+    |
+    +- watermark.exe     your watermarking software
+    |
+    +- watermark.bat
+    |
+    +- psnr.bat
+    |
+    +- attack.bat
+    |
+    +- detect.bat
+    |
+    +- Attacked/
+    |
+    +- Watermarked/
+    |
+    +- Samples/ --+- baboon.ppm
+                  |
+                  +- bear.ppm
+                  |
+                  +- lena.ppm
+                  |
+                  +- skyline_arch.ppm
+                  |
+                  +- watch.ppm
+                  |
+                  +- fishing_boat.pgm
+
+
+$Header: /StirMark/Test/Benchmark.txt 3     7/04/99 11:49 Fapp2 $
